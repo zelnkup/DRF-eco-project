@@ -12,7 +12,8 @@ def gen_code():
 class MyCustomUser(AbstractUser):
 
 	code = models.CharField(max_length=6, default=gen_code, unique=True)
-	points = models.PositiveIntegerField(default=0)
+	current_points = models.PositiveIntegerField(default=0)
+	all_points = models.PositiveIntegerField(default=0)
 
 	def __str__(self):
 		return str(self.code)

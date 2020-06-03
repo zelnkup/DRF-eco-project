@@ -7,12 +7,12 @@ from .models import MyCustomUser
 class UserSerializer(UserSerializer):
 	class Meta:
 		model = MyCustomUser
-		fields = ['email','id', 'username', 'points']
+		fields = ['email', 'id', 'username', 'current_points', 'all_points']
 
 
 class CurrentUserSerializer(serializers.ModelSerializer):
-    """The custom serializer which is the end point fot auth/me"""
+	"""The custom serializer which is the end point fot auth/me"""
 
-    class Meta:
-        model = MyCustomUser
-        fields = ['id', 'code', 'points', 'email', 'username']
+	class Meta:
+		model = MyCustomUser
+		fields = ['id', 'code', 'current_points', 'all_points', 'email', 'username']

@@ -5,7 +5,7 @@ from .models import MyCustomUser
 
 
 class MyCustomUserAdmin(admin.ModelAdmin):
-    list_display = ['username', 'code', 'points', 'is_active']
+    list_display = ['username', 'code', 'current_points','all_points', 'is_active']
 
 
 admin.site.register(MyCustomUser, MyCustomUserAdmin)
